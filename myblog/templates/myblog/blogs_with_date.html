@@ -1,0 +1,10 @@
+{% extends 'myblog/blog_list.html' %}
+
+{# 页面标题 #}
+{% block title %}
+    时间归档
+{% endblock %}
+
+
+{# 页面内容 #}
+{% block blog_list_title %}{{ blogs_with_date }}{% endblock %}

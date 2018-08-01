@@ -1,0 +1,17 @@
+{% extends 'form.html' %}
+
+{% block other_buttons %}
+    <button class="btn btn-primary">发送验证码</button>
+{% endblock %}
+
+{% block script_extends %}
+    <script type="text/javascript">
+        $("#send_code").click(function(){
+            var email = $("#id_email").val();
+            if(email=''){
+                $("#tip").text('* 邮箱不能为空');
+                return false;
+            }
+            });
+    </script>
+{% endblock %}

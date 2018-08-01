@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}博客分类{% endblock %}
+{% block nav_blogtype_active %}active{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">博客分类 (一共有{{ blogtypes|length }}种分类)</div>
+                        <div class="panel-body">
+                        {% for blogtype in blogtypes %}
+                            <p>
+                                <h3>
+                                    <a href="{% url 'blogs_with_type' blogtype.pk %}"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                                        {{ blogtype.type_name }}
+                                    </a>
+                                </h3>
+                            </p>
+                        {% empty %}
+                            <h3>--暂无分类，敬请期待--</h3>
+                        {% endfor  %}
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
